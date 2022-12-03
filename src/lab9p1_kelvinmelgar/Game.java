@@ -181,18 +181,21 @@ public class Game {
                                 //elemento a la izquierda
                                 if(this.getTablero()[i - 1][j - 1] == 1)
                                     celulasV++;
+                                break;
                             }
 
                             case 1 ->  {
                                 //elemento en la misma posicion de y del acrual
                                 if(this.getTablero()[i - 1][j] == 1)
                                     celulasV++;
+                                break;
                             }
 
                             case 2 ->  {
                                 //elemento a la derecha del actual
                                 if(this.getTablero()[i - 1][j + 1] == 1)
                                     celulasV++;
+                                break;
                             }
                         }
 
@@ -205,11 +208,13 @@ public class Game {
                             case 0 ->  {
                                 if(this.getTablero()[i][j - 1] == 1)
                                     celulasV++;
+                                break;
                             }
 
                             case 2 ->  {
                                 if(this.getTablero()[i][j + 1] == 1)
                                     celulasV++;
+                                break;
                             }
                         }
 
@@ -222,16 +227,19 @@ public class Game {
                             case 0 ->  {
                                 if(this.getTablero()[i + 1][j - 1] == 1)
                                     celulasV++;
+                                break;
                             }
 
                             case 1 ->  {
                                 if(this.getTablero()[i + 1][j] == 1)
                                     celulasV++;
+                                break;
                             }
 
                             case 2 ->  {
                                 if(this.getTablero()[i + 1][j + 1] == 1)
                                     celulasV++;
+                                break;
                             }
                         }
 
