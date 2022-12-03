@@ -55,7 +55,16 @@ public class Game {
             nextGen();
             
             System.out.println("Coordenadas de celulas vivas: ");
-            System.out.println(this.getCoordenadas());
+            
+            //imprime filas de coordenadas por si la la lista es muy larga
+            for (int j = 0; j < this.getCoordenadas().size(); j++) {
+                
+                if(j > 0 && j%5 == 0)
+                    System.out.println();
+                System.out.print("("+this.getCoordenadas().get(j)+") ");
+                
+            }
+            System.out.println("\n");
             
             
             Print(this.getCoordenadas());
@@ -72,6 +81,7 @@ public class Game {
     public void nextGen(){
         
         int[][] tablero = this.getTablero();
+        //asigno a nextTablero los valores del tablero para modificarlos solamente
         int[][] nextTablero = tablero;
         
         for (int i = 0; i < tablero.length; i++) {
@@ -80,6 +90,7 @@ public class Game {
                 if(!(i == 0 || j == 0 || tablero.length - i == 1 || tablero[0].length - j == 1)){
                     
                     //llama al metodo de la clase misma para evaluar las celulas vivas
+                    //para que se vea un poco mas organizado :)
                     int celulasV = this.evaluarCelula(i, j);
                     
                     if(tablero[i][j] == 1){
@@ -112,6 +123,7 @@ public class Game {
             }
         }
         
+        //setea las variables de la clase
         this.setCoordenadas(temp);
         int[][] tem = tablero;
         this.setTablero(nextTablero);
@@ -126,17 +138,21 @@ public class Game {
     
     public void Print(ArrayList<String> k) {
         
+        //matriz para las coordenadas donde estan las celulas vivas
         int[][] temp = new int[10][10];
 
         for (int i = 0; i < k.size(); i++) {
+            //obtiene las coordenadas del indice
             String[] coord = k.get(i).split(":");
 
             int x = Integer.parseInt(coord[0]);
             int y = Integer.parseInt(coord[1]);
             
+            //asigna en esa coordenada 1
             temp[x][y] = 1;
         }
         
+        //imprime la matriz
         for (int i = 0; i < temp.length; i++) {
             for (int j = 0; j < temp[0].length; j++) {
                 System.out.print(temp[i][j] + " ");

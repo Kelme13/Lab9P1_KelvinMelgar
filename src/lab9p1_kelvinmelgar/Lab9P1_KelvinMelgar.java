@@ -44,8 +44,16 @@ public class Lab9P1_KelvinMelgar {
                     int n_rond = sc.nextInt();
                     
                     System.out.println("IMPRESION INICIAL NO CUENTA");
-                    System.out.println("Coordenas de celulcas vivas Inicial: ");
-                    System.out.println(coordenas);
+                    System.out.println("Coordenas de celulas vivas Inicial: ");
+                    for (int i = 0; i < coordenas.size(); i++) {
+                        
+                        if(i > 0 && i%5 == 0)
+                            System.out.println();
+                        
+                        System.out.print("("+coordenas.get(i)+")");
+                        
+                    }
+                    System.out.println("\n");
                     //imprime la matriz
                     g.Print(coordenas);
                     
